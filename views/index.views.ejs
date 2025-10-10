@@ -21,7 +21,13 @@
           <% } %>
         </div>
       </div>
-      <div></div>
+      <div>
+        <% if (formOpen) { %>
+            <%- include('components/form.views.ejs') %>
+        <% } else { %>
+            <button><a href="/new">open forn</a></button>
+        <% } %>
+      </div>
     </main>
     <%- include('components/footer.views.ejs') %>
   </body>

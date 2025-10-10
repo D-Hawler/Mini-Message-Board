@@ -43,19 +43,28 @@ footer {
 
 main {
   padding: 20px 40px;
+  height: calc(
+    100% - calc(var(--header-height) + calc(var(--header-height) / 2))
+  );
 
-  flex: 1;
   display: flex;
   gap: 10px;
 }
 
 main > div:first-child {
-  flex: 70%;
+  height: 100%;
+
+  flex: 0 0 70%;
   display: flex;
 }
 
 main > div:first-child > .scroll {
-  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -75,6 +84,8 @@ main > div:first-child > .scroll {
   padding: 5px 10px;
 
   font-size: 1rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
 
   color: rgb(92, 92, 92);
 }
@@ -86,7 +97,27 @@ main > div:first-child > .scroll {
 }
 
 main > div:last-child {
+  padding: 20px 40px;
+
   border: 1px solid var(--border-color);
 
   flex: 30%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button,
+input {
+  padding: 5px 10px;
+
+  width: 100%;
+}
+
+button > a {
+  text-decoration: none;
+  color: var(--border-color);
 }
