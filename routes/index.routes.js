@@ -13,7 +13,9 @@ const messages = [
   },
 ];
 
-index.get("/", (req, res) => {});
+index.get("/", (req, res) => {
+  res.render("index.views.ejs", { messages: messages });
+});
 
 index.get("/new", (req, res) => {});
 

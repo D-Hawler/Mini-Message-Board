@@ -1,0 +1,92 @@
+:root {
+  --header-color: rgb(30, 30, 112);
+  --header-text-color: rgb(255, 255, 255);
+  --header-height: 10%;
+
+  --border-color: rgb(0, 0, 0);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header,
+footer {
+  padding: 20px 40px;
+  height: var(--header-height);
+
+  background-color: var(--header-color);
+  color: var(--header-text-color);
+}
+
+header > h1 > a {
+  text-decoration: none;
+  color: var(--header-text-color);
+}
+
+footer {
+  height: calc(var(--header-height) / 2);
+}
+
+main {
+  padding: 20px 40px;
+
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+main > div:first-child {
+  flex: 70%;
+  display: flex;
+}
+
+main > div:first-child > .scroll {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatBlock {
+  padding: 10px 20px;
+
+  border: 1px solid var(--border-color);
+}
+
+.chatBlock > p:nth-of-type(1) {
+  font-size: 1.5rem;
+}
+
+.chatBlock > p:nth-of-type(2) {
+  padding: 5px 10px;
+
+  font-size: 1rem;
+
+  color: rgb(92, 92, 92);
+}
+
+.chatBlock > div {
+  display: flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+}
+
+main > div:last-child {
+  border: 1px solid var(--border-color);
+
+  flex: 30%;
+}
