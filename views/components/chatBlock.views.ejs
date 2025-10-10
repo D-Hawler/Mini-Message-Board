@@ -1,8 +1,12 @@
 <div class="chatBlock">
-  <p><%= user %></p>
-  <p><%= text %></p>
-  <div>
-    <p><%= time %></p>
-    <p><%= date %></p>
-  </div>
+  <a href="/<%= encodeURIComponent(user) %>">
+    <div>
+      <p><%= user %></p>
+      <p><%= text %></p>
+      <div>
+        <p><%= time %></p>
+        <p><%= date %></p>
+      </div>
+    </div>
+  </a>
 </div>

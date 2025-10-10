@@ -27,4 +27,12 @@ index.post("/new", (req, res) => {
   res.redirect("/");
 });
 
+index.get('/:user', (req, res) => {
+  const user = req.params.user;
+
+  const userMessages = messages.filter((m) => m.user === user);
+
+  res.render('index.views.ejs', { messages: userMessages, formOpen: false });
+});
+
 module.exports = index;

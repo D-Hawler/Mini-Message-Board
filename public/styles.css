@@ -75,12 +75,22 @@ main > div:first-child > .scroll {
 
   border: 1px solid var(--border-color);
 }
+.chatBlock:hover {
+    transform: scale(0.99);
+    will-change: transform;
+    transition: transform 0.5s;
+}
 
-.chatBlock > p:nth-of-type(1) {
+.chatBlock > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.chatBlock > a > div > p:nth-of-type(1) {
   font-size: 1.5rem;
 }
 
-.chatBlock > p:nth-of-type(2) {
+.chatBlock > a > div > p:nth-of-type(2) {
   padding: 5px 10px;
 
   font-size: 1rem;
@@ -90,7 +100,7 @@ main > div:first-child > .scroll {
   color: rgb(92, 92, 92);
 }
 
-.chatBlock > div {
+.chatBlock > a > div > div {
   display: flex;
   gap: 10px;
   flex-direction: row-reverse;
