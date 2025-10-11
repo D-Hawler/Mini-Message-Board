@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/responsive.css" />
     <title>Message board</title>
   </head>
   <body>
@@ -22,10 +23,9 @@
         </div>
       </div>
       <div>
-        <% if (formOpen) { %>
-            <%- include('components/form.views.ejs') %>
-        <% } else { %>
-            <a href="/new"><button>open forn</button></a>
+        <% if (formOpen) { %> <%- include('components/form.views.ejs') %> <% }
+        else { %>
+        <a href="/new"><button>open forn</button></a>
         <% } %>
       </div>
     </main>

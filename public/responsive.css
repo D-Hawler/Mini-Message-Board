@@ -1,0 +1,24 @@
+@media (max-width: 425px) {
+  :root {
+    --header-height: 8%;
+  }
+
+  header,
+  footer {
+    padding: 10px 20px;
+
+    font-size: 1rem;
+  }
+
+  main {
+    flex-direction: column-reverse;
+  }
+
+  main > div:first-child {
+    height: 70%;
+  }
+
+  main > div:last-child {
+    align-content: center;
+  }
+}
