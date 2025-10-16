@@ -10,22 +10,17 @@
   <body>
     <%- include('components/header.views.ejs') %>
     <main>
+      <div><%- include('components/messageBoard.views.ejs') %></div>
       <div>
-        <div class="scroll">
-          <% if (messages && messages.length > 0) { %> <%
-          messages.forEach(function(block) { %> <%-
-          include('components/chatBlock.views.ejs', { user: block.user, text:
-          block.text, time: block.added.toLocaleTimeString([], { hour:
-          '2-digit', minute: '2-digit' }), date:
-          block.added.toLocaleDateString() }) %> <% }); %> <% } else { %>
-          <p>no message</p>
-          <% } %>
-        </div>
-      </div>
-      <div>
-        <% if (formOpen) { %> <%- include('components/form.views.ejs') %> <% }
-        else { %>
-        <a href="/new"><button>open forn</button></a>
+        <% if (account) { %>
+        <p>You logged in as <%= accountName %></p>
+        <%- include('components/form.views.ejs') %>
+        <% } else { %>
+        <form action="/user" method="GET">
+          <label for="name">Name:</label>
+          <input type="text" name="userName" id="name" required />
+          <button type="submit">enter</button>
+        </form>
         <% } %>
       </div>
     </main>
