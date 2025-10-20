@@ -120,6 +120,15 @@ form {
   gap: 10px;
 }
 
+textarea {
+  padding: 5px 10px;
+
+  width: 100%;
+  height: 100px;
+
+  resize: none;
+}
+
 button,
 input {
   padding: 5px 10px;
