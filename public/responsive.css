@@ -19,6 +19,11 @@
   }
 
   main > div:last-child {
+    height: 30%;
     align-content: center;
+  }
+
+  textarea {
+    height: 80px;
   }
 }

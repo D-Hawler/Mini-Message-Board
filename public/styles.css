@@ -76,14 +76,14 @@ main > div:first-child > .scroll {
   border: 1px solid var(--border-color);
 }
 .chatBlock:hover {
-    transform: scale(0.99);
-    will-change: transform;
-    transition: transform 0.5s;
+  transform: scale(0.99);
+  will-change: transform;
+  transition: transform 0.5s;
 }
 
 .chatBlock > a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .chatBlock > a > div > p:nth-of-type(1) {
@@ -112,6 +112,11 @@ main > div:last-child {
   border: 1px solid var(--border-color);
 
   flex: 30%;
+}
+
+.user {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 form {
