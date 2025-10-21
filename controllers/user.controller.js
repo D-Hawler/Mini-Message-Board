@@ -1,5 +1,8 @@
 const db = require("../db/queries");
 
+let userNAME;
+let userID;
+
 exports.userAuthorization = async (req, res) => {
   const { userName } = req.query;
 
@@ -7,7 +10,18 @@ exports.userAuthorization = async (req, res) => {
     return res.status(400).send("Missing 'userName' parameter");
   }
 
-  const name = await db.userSearch(userName);
+  const user = await db.userSearch(userName);
 
-  res.redirect(`/user/${name.username}#${name.id}`);
-}
+  userNAME = user.username;
+  userID = user.id;
+
+  res.redirect(`/user/${user.username}#${user.id}`);
+};
+
+exports.userAddComment = async (req, res) => {
+  const { comment } = req.body;
+
+  db.addComment(userID, comment);
+
+  res.redirect(`/user/${userNAME}#${userID}`);
+};

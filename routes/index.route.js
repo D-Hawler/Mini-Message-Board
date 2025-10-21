@@ -1,10 +1,11 @@
 const indexRouter = require("express").Router();
+const db = require("../db/queries");
 
-const messages = {};
+indexRouter.get("/", async (req, res) => {
+  const messages = await db.getAllMessages();
 
-indexRouter.get("/", (req, res) => {
   res.render("index.views.ejs", {
-    messages: messages,
+    messages,
     account: false,
     accountName: "",
   });

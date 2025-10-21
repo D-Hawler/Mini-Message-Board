@@ -1,10 +1,8 @@
 <div class="scroll">
   <% if (messages && messages.length > 0) { %> <%
   messages.forEach(function(block) { %> <%-
-  include('components/chatBlock.views.ejs', { user: block.user, text:
-  block.text, time: block.added.toLocaleTimeString([], { hour: '2-digit',
-  minute: '2-digit' }), date: block.added.toLocaleDateString() }) %> <% }); %>
-  <% } else { %>
+  include('./chatBlock.views.ejs', { block: block }) %> <% }) %> <% }
+  else { %>
   <p>no message</p>
   <% } %>
 </div>
