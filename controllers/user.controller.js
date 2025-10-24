@@ -1,8 +1,5 @@
 const db = require("../db/queries");
 
-let userNAME;
-let userID;
-
 exports.userAuthorization = async (req, res) => {
   const { userName } = req.query;
 
@@ -12,14 +9,16 @@ exports.userAuthorization = async (req, res) => {
 
   const user = await db.userSearch(userName);
 
-  userNAME = user.username;
-  userID = user.id;
+  res.cookie("userNAME", user.username, { maxAge: 3600 * 1000, httpOnly: true, path: "/" });
+  res.cookie("userID", user.id, { maxAge: 3600 * 1000, httpOnly: true, path: "/" });
 
   res.redirect(`/user/${user.username}#${user.id}`);
 };
 
 exports.userAddComment = async (req, res) => {
   const { comment } = req.body;
+  const userNAME = req.cookies.userNAME;
+  const userID = req.cookies.userID;
 
   db.addComment(userID, comment);
 
