@@ -1,11 +1,16 @@
 const express = require("express");
 const path = require("node:path");
 
+const { init } = require("./db/init");
 const indexRouter = require("./routes/index.route");
 const userRouter = require("./routes/user.route");
 
 require("dotenv").config();
 const app = express();
+
+(async () => {
+  await init();
+})();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
